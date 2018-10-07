@@ -1,0 +1,143 @@
+.page-content {
+  flex-grow: 1;
+}
+
+.content-section {
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 80px 101px;
+  position: relative;
+}
+
+.content-section:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  background-color: rgb(208, 212, 216);
+  left: 0;
+}
+
+.content-section:last-child:after {
+  display: none;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: 400;
+  color: rgb(78, 86, 101);
+  margin-bottom: 42px;
+}
+
+.section-description {
+  line-height: 1.75;
+}
+
+.description-link {
+  color: rgb(8, 155, 217);
+  font-weight: 600;
+}
+
+.statistic {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.statistic-item {
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statistic-item__img {
+  width: 80%;
+}
+
+.statistic-item__img > img{
+  width: 100%;
+  display: block;
+}
+
+.statistic-item__description {
+  margin-top: 22px;
+}
+
+.statistic-item__counts {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.36;
+  text-align: center;
+}
+
+.statistic-item__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #909090;
+  text-align: center;
+}
+
+.section-photos {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-top: 64px;
+}
+
+.section-photos__img {
+  width: 50%;
+}
+
+.section-photos__img > img {
+  width: 100%;
+  display: block;
+}
+
+.section-photos__description {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.2);
+  max-width: 470px;
+  padding: 40px;
+}
+
+.section-photos__description:before {
+  content: '';
+  width: 33px;
+  height: 33px;
+  border-left: 1px solid rgb(8, 155, 217);
+  border-top: 1px solid rgb(8, 155, 217);
+  position: absolute;
+  top: 19px;
+  left: 19px;
+}
+
+.section-photos__description:after {
+  content: '';
+  width: 33px;
+  height: 33px;
+  border-right: 1px solid rgb(8, 155, 217);
+  border-bottom: 1px solid rgb(8, 155, 217);
+  position: absolute;
+  bottom: 19px;
+  right: 19px;
+}
+
+.section-photos__title {
+  margin-bottom: 16px;
+}
+
+.section-photos_right > .section-photos__description {
+  left: inherit;
+  right: 100px;
+}
+
+.section-photos_right {
+  justify-content: flex-start;
+}

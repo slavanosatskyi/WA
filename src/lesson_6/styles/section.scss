@@ -1,0 +1,36 @@
+@import './mixins.scss';
+
+.section {
+  width: 100%;
+  min-height: 150px;
+  @include flex-center-horizontal;
+  align-items: stretch;
+  padding: 0 1rem;
+  &_dark {
+    background: rgb(0,0,0);
+  }
+  &_iphone-xs {
+    padding-top: 92px;
+    padding-bottom: 40px;
+  }
+  &__content {
+    @include flex-center-horizontal;
+    width: 100%;
+    max-width: $page-content-width;
+  }
+  &__image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    &_iphone-xs {
+      height: 300px;
+      width: 80%;
+      background-image: url(../../assets/images/lesson_6/hero-iphone-xs_large_2x.jpg);
+      @include tablet {
+        height: 500px;
+        width: 100%;
+        background-image: url(../../assets/images/lesson_6/hero-iphone-xs_small_2x.jpg);
+      }
+    }
+  }
+}
