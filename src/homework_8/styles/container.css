@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 820px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.container__title {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+        height: auto;
+    }
+}
+ 
