@@ -1,4 +1,4 @@
-* {
+@import url(https://use.fontawesome.com/releases/v5.0.0/css/all.css);* {
   box-sizing: border-box; }
 
 html {
@@ -9,7 +9,11 @@ html {
 body {
   padding: 0;
   margin: 0;
-  min-height: 100vh; }
+  min-height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 h1,
 h2,
@@ -156,17 +160,34 @@ a {
       align-items: stretch;
   padding: 0 1rem; }
   .section_dark {
+    color: white;
     background: black; }
+  .section_white {
+    color: black;
+    background: #fafafa; }
+  .section_test {
+    background: red; }
   .section_iphone-xs {
     padding-top: 92px;
     padding-bottom: 40px; }
+  .section_red-cross {
+    padding: 50px 0; }
+  .section_iphone-xr {
+    padding-top: 70px; }
   .section__content {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
     width: 100%;
     max-width: 960px; }
+    .section__content_aligment_vertical {
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: center;
+          align-items: center; }
   .section__image {
     background-size: contain;
     background-repeat: no-repeat;
@@ -180,3 +201,62 @@ a {
           height: 500px;
           width: 100%;
           background-image: url(./assets/images/hero-iphone-xs_small_2x.jpg); } }
+    .section__image_iphone-xr {
+      height: 300px;
+      width: 80%;
+      background-image: url(./assets/images/iphone_xr_medium.jpg); }
+    .section__image_apple-watch {
+      margin-left: 50px;
+      width: 50%;
+      height: 617px;
+      background-image: url(./assets/images/apple_watch_series_4_medium.jpg); }
+
+.description {
+  text-align: center; }
+  .description__title {
+    margin-bottom: 10px; }
+    .description__title_small {
+      font-size: 1.9rem;
+      font-weight: normal; }
+  .description__image {
+    height: 34px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .description__image_xs-logo {
+      background-image: url(./assets/images/iphone_xs_logo_hero_large_2x.png); }
+    .description__image_red-cross {
+      height: 60px;
+      background-image: url(./assets/images/logo_arc_medium.jpg); }
+    .description__image_xr-logo {
+      background-image: url(./assets/images/iphone_xr_logo_hero_medium.png); }
+    .description__image_apple-watch {
+      height: 60px;
+      background-image: url(./assets/images/apple_watch_series_4_logo_hero_medium.jpg); }
+  .description__content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .description__more {
+    font-size: 1.5rem;
+    padding: 0px 10px;
+    color: #66bbff; }
+    .description__more::after {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: "\F105";
+      margin-left: 5px; }
+  .description__secondary-text {
+    font-size: 1.2rem;
+    color: #cccccc; }
+  .description_iphone-xr {
+    padding-bottom: 50px; }
+  .description_apple-watch {
+    margin-top: 20px; }
+
+.container {
+  padding: 5px; }
+  .container_col_2 {
+    width: 50%;
+    min-height: 490px; }
