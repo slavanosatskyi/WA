@@ -1,3 +1,4 @@
+@import './styles/mixins.scss';
 .container {
     display: flex;
     justify-content: center;
@@ -11,10 +12,9 @@
     margin-bottom: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: $md-screen) {
     .container {
         width: 100%;
         height: auto;
     }
 }
- 
