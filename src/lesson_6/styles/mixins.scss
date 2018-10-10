@@ -1,12 +1,9 @@
+@import './styles/variables.scss';
+
 @mixin flex-center-horizontal {
   display: flex;
   justify-content: center;
 }
-$xs-screen: 480px;
-$sm-screen: 720px;
-$md-screen: 980px;
-$lg-screen: 1366px;
-$xl-screen: 1920px;
 
 @mixin xs-mobile {
   @media (max-width: #{$xs-screen - 0.1px}) {

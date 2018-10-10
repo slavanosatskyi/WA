@@ -1,0 +1,29 @@
+@import './styles/mixins.scss';
+
+$min-width: 8.333333333%;
+
+.col {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+@mixin col-properties($width, $i) {
+    width: $width;
+    flex-basis: $width;
+    @if $i < 12 {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+@for $i from 1 through 12 {
+    $width: $min-width * $i;
+    .col-#{$i} {
+        @include col-properties($width, $i);
+    }
+    .col-xs-#{$i} {
+        @include xs-mobile {
+            @include col-properties($width, $i);
+        }
+    }
+}
