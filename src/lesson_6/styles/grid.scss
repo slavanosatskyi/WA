@@ -22,7 +22,7 @@ $min-width: 8.333333333%;
         @include col-properties($width, $i);
     }
     .col-xs-#{$i} {
-        @include xs-mobile {
+        @include mobile {
             @include col-properties($width, $i);
         }
     }
