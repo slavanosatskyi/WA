@@ -1,4 +1,4 @@
-@import url(https://use.fontawesome.com/releases/v5.0.0/css/all.css);* {
+* {
   box-sizing: border-box; }
 
 html {
@@ -9,11 +9,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  min-height: 100vh;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  min-height: 100vh; }
 
 h1,
 h2,
@@ -31,6 +27,186 @@ ul {
 a {
   text-decoration: none;
   display: inline-block; }
+
+.col {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.col-1 {
+  width: 8.33333%;
+  -ms-flex-preferred-size: 8.33333%;
+      flex-basis: 8.33333%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-1 {
+    width: 8.33333%;
+    -ms-flex-preferred-size: 8.33333%;
+        flex-basis: 8.33333%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-2 {
+  width: 16.66667%;
+  -ms-flex-preferred-size: 16.66667%;
+      flex-basis: 16.66667%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-2 {
+    width: 16.66667%;
+    -ms-flex-preferred-size: 16.66667%;
+        flex-basis: 16.66667%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-3 {
+  width: 25.0%;
+  -ms-flex-preferred-size: 25.0%;
+      flex-basis: 25.0%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-3 {
+    width: 25.0%;
+    -ms-flex-preferred-size: 25.0%;
+        flex-basis: 25.0%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-4 {
+  width: 33.33333%;
+  -ms-flex-preferred-size: 33.33333%;
+      flex-basis: 33.33333%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-4 {
+    width: 33.33333%;
+    -ms-flex-preferred-size: 33.33333%;
+        flex-basis: 33.33333%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-5 {
+  width: 41.66667%;
+  -ms-flex-preferred-size: 41.66667%;
+      flex-basis: 41.66667%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-5 {
+    width: 41.66667%;
+    -ms-flex-preferred-size: 41.66667%;
+        flex-basis: 41.66667%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-6 {
+  width: 50.0%;
+  -ms-flex-preferred-size: 50.0%;
+      flex-basis: 50.0%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-6 {
+    width: 50.0%;
+    -ms-flex-preferred-size: 50.0%;
+        flex-basis: 50.0%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-7 {
+  width: 58.33333%;
+  -ms-flex-preferred-size: 58.33333%;
+      flex-basis: 58.33333%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-7 {
+    width: 58.33333%;
+    -ms-flex-preferred-size: 58.33333%;
+        flex-basis: 58.33333%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-8 {
+  width: 66.66667%;
+  -ms-flex-preferred-size: 66.66667%;
+      flex-basis: 66.66667%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-8 {
+    width: 66.66667%;
+    -ms-flex-preferred-size: 66.66667%;
+        flex-basis: 66.66667%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-9 {
+  width: 75.0%;
+  -ms-flex-preferred-size: 75.0%;
+      flex-basis: 75.0%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-9 {
+    width: 75.0%;
+    -ms-flex-preferred-size: 75.0%;
+        flex-basis: 75.0%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-10 {
+  width: 83.33333%;
+  -ms-flex-preferred-size: 83.33333%;
+      flex-basis: 83.33333%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-10 {
+    width: 83.33333%;
+    -ms-flex-preferred-size: 83.33333%;
+        flex-basis: 83.33333%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-11 {
+  width: 91.66667%;
+  -ms-flex-preferred-size: 91.66667%;
+      flex-basis: 91.66667%;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+@media (max-width: 719.9px) {
+  .col-xs-11 {
+    width: 91.66667%;
+    -ms-flex-preferred-size: 91.66667%;
+        flex-basis: 91.66667%;
+    padding-right: 5px;
+    padding-left: 5px; } }
+
+.col-12 {
+  width: 100.0%;
+  -ms-flex-preferred-size: 100.0%;
+      flex-basis: 100.0%; }
+
+@media (max-width: 719.9px) {
+  .col-xs-12 {
+    width: 100.0%;
+    -ms-flex-preferred-size: 100.0%;
+        flex-basis: 100.0%; } }
 
 .global-nav {
   width: 100%;
@@ -69,7 +245,7 @@ a {
   .global-nav_default {
     background-color: rgba(0, 0, 0, 0.8); }
   .global-nav_darken {
-    background-color: black; }
+    background-color: rgba(0, 0, 0, 0.8); }
   .global-nav__mobile-controls {
     display: none;
     width: 100%;
@@ -149,114 +325,112 @@ a {
     -ms-transform: translateY(-5px) rotate(45deg);
         transform: translateY(-5px) rotate(45deg); } }
 
-.section {
+.global-wrapper {
   width: 100%;
-  min-height: 150px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: stretch;
-      align-items: stretch;
-  padding: 0 1rem; }
-  .section_dark {
-    color: white;
-    background: black; }
-  .section_white {
-    color: black;
-    background: #fafafa; }
-  .section_test {
-    background: red; }
-  .section_iphone-xs {
-    padding-top: 92px;
-    padding-bottom: 40px; }
-  .section_red-cross {
-    padding: 50px 0; }
-  .section_iphone-xr {
-    padding-top: 70px; }
-  .section__content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-        justify-content: center;
-    -ms-flex-align: center;
-        align-items: center;
-    width: 100%;
-    max-width: 960px; }
-    .section__content_aligment_vertical {
-      -ms-flex-direction: column;
-          flex-direction: column;
-      -ms-flex-align: center;
-          align-items: center; }
-  .section__image {
-    background-size: contain;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.footer {
+  background-color: #f2f2f2;
+  height: 100px;
+  width: 100%; }
+
+.promo {
+  position: relative;
+  z-index: -1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  background: #fafafa;
+  width: 100%;
+  min-height: 580px; }
+  @media (max-width: 1067.9px) {
+    .promo {
+      min-height: 500px; } }
+  @media screen and (min-width: 720px) {
+    .promo_horizontal {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; } }
+  .promo_theme-dark {
+    background-color: black;
+    color: white; }
+  .promo__description {
+    background: green;
+    width: 100px;
+    height: 100px; }
+  .promo__image-wrapper {
     background-repeat: no-repeat;
-    background-position: center bottom; }
-    .section__image_iphone-xs {
-      height: 300px;
-      width: 80%;
-      background-image: url(./assets/images/hero-iphone-xs_large_2x.jpg); }
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+    width: 100%; }
+    .promo__image-wrapper_full-size {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: -1; }
+    .promo__image-wrapper_ipad {
+      height: 335px;
+      width: 515px;
+      background-image: url(./assets/images/ipad_large_2x.jpg); }
       @media (max-width: 979.9px) {
-        .section__image_iphone-xs {
-          height: 500px;
+        .promo__image-wrapper_ipad {
           width: 100%;
-          background-image: url(./assets/images/hero-iphone-xs_small_2x.jpg); } }
-    .section__image_iphone-xr {
-      height: 300px;
-      width: 80%;
-      background-image: url(./assets/images/iphone_xr_medium.jpg); }
-    .section__image_apple-watch {
-      margin-left: 50px;
-      width: 50%;
-      height: 617px;
+          background-size: contain;
+          background-image: url(./assets/images/ipad_medium.jpg); } }
+    .promo__image-wrapper_macbook {
+      background-image: url(./assets/images/macbook_pro_performance_medium.jpg); }
+    .promo__image-wrapper_homepod {
+      width: 317px;
+      height: 331px;
+      background-image: url(./assets/images/homepod_medium.jpg); }
+    .promo__image-wrapper_give-back {
+      background-image: url(./assets/images/give_back_medium.jpg); }
+    .promo__image-wrapper_airpods {
+      max-width: 417px;
+      height: 387px;
+      background-image: url(./assets/images/airpods_medium.jpg); }
+    .promo__image-wrapper_apple-music {
+      background-image: url(./assets/images/apple_music_large.jpg); }
+      @media (max-width: 719.9px) {
+        .promo__image-wrapper_apple-music {
+          background-image: url(./assets/images/apple_music_small_2x.jpg); } }
+    .promo__image-wrapper_apple-watch {
+      max-width: 404px;
+      height: 738px;
+      background-position: left center;
       background-image: url(./assets/images/apple_watch_series_4_medium.jpg); }
-
-.description {
-  text-align: center; }
-  .description__title {
-    margin-bottom: 10px; }
-    .description__title_small {
-      font-size: 1.9rem;
-      font-weight: normal; }
-  .description__image {
-    height: 34px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center; }
-    .description__image_xs-logo {
-      background-image: url(./assets/images/iphone_xs_logo_hero_large_2x.png); }
-    .description__image_red-cross {
-      height: 60px;
-      background-image: url(./assets/images/logo_arc_medium.jpg); }
-    .description__image_xr-logo {
-      background-image: url(./assets/images/iphone_xr_logo_hero_medium.png); }
-    .description__image_apple-watch {
-      height: 60px;
-      background-image: url(./assets/images/apple_watch_series_4_logo_hero_medium.jpg); }
-  .description__content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-        justify-content: center; }
-  .description__more {
-    font-size: 1.5rem;
-    padding: 0px 10px;
-    color: #66bbff; }
-    .description__more::after {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      content: "\F105";
-      margin-left: 5px; }
-  .description__secondary-text {
-    font-size: 1.2rem;
-    color: #cccccc; }
-  .description_iphone-xr {
-    padding-bottom: 50px; }
-  .description_apple-watch {
-    margin-top: 20px; }
-
-.container {
-  padding: 5px; }
-  .container_col_2 {
-    width: 50%;
-    min-height: 490px; }
+      @media (max-width: 719.9px) {
+        .promo__image-wrapper_apple-watch {
+          height: 309px;
+          background-image: url(./assets/images/apple_watch_series_4_small_2x.jpg);
+          background-position: center; } }
+    .promo__image-wrapper_iphone-xr {
+      height: 446px;
+      max-width: 1020px;
+      background-position-y: bottom;
+      background-size: contain;
+      background-image: url(./assets/images/iphone_xr_medium.jpg); }
+      @media (max-width: 719.9px) {
+        .promo__image-wrapper_iphone-xr {
+          height: 332px;
+          background-image: url(./assets/images/iphone_xr_small_2x.jpg); } }
+    .promo__image-wrapper_iphone-xs {
+      max-width: 974px;
+      height: 415px;
+      background-size: contain;
+      background-image: url(./assets/images/hero-iphone-xs_large_2x.jpg); }
+      @media (max-width: 719.9px) {
+        .promo__image-wrapper_iphone-xs {
+          height: 331px;
+          background-image: url(./assets/images/hero-iphone-xs_small_2x.jpg); } }
