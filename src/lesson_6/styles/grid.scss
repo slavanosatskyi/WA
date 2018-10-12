@@ -11,8 +11,10 @@ $min-width: 8.333333333%;
     width: $width;
     flex-basis: $width;
     @if $i < 12 {
-        padding-right: 5px;
-        padding-left: 5px;
+        @media screen and (min-width: $sm-screen) {
+            padding-right: 5px;
+            padding-left: 5px;    
+        }
     }
 }
 

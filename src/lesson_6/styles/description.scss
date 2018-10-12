@@ -1,0 +1,15 @@
+.description {
+    text-align: center;
+    &__primary-text {
+        margin-top: 42px;
+        font-size: 2.4rem;
+    }
+    &__secondary-text {
+        margin-top: 3px;
+        font-size: 1.4rem;
+    }
+    &__links {
+        margin-top: 5px;
+        font-size: 1.4rem;
+    }
+}
