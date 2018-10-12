@@ -1,8 +1,21 @@
 .description {
     text-align: center;
+    padding-top: 54px;
     &__primary-text {
-        margin-top: 42px;
         font-size: 2.4rem;
+        width: 100%;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-bottom: 14px;
+        &_iphone-xs {
+            margin-top: 42px;
+            background-image: url($assets-folder + 'iphone_xs_logo_hero_large_2x.png');
+        }
+        &_iphone-xr {
+            background-image: url($assets-folder + 'iphone_xr_logo_hero_medium.png');
+        }
     }
     &__secondary-text {
         margin-top: 3px;
