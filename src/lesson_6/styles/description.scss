@@ -16,10 +16,35 @@
         &_iphone-xr {
             background-image: url($assets-folder + 'iphone_xr_logo_hero_medium.png');
         }
+        &_apple-watch {
+            background-image: url($assets-folder + 'apple_watch_series_4_logo_hero_medium.jpg');
+            height: 78px;
+            @include tablet {
+                height: 55px;
+            }
+            @include mobile {
+                height: 47px;
+            }
+        }
+        &_apple-music {
+            background-image: url($assets-folder + 'apple_watch_series_4_logo_hero_medium.jpg');
+            height: 78px;
+            @include tablet {
+                height: 55px;
+            }
+            @include mobile {
+                height: 47px;
+            }
+        }
     }
     &__secondary-text {
         margin-top: 3px;
         font-size: 1.4rem;
+        @include mobile {
+            & > br {
+                display: none;
+            }
+        }
     }
     &__links {
         margin-top: 5px;

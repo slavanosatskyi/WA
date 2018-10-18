@@ -1,8 +1,6 @@
 @import './styles/mixins.scss';
 
 .promo {
-    position: relative;
-    z-index: -1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,19 +21,30 @@
         background-color: rgb(0, 0, 0);
         color: rgb(255, 255, 255);
     }
+    &__background {
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        background-position: center;
+        &_apple-music {
+            background-image: url($assets_folder + 'apple_music_large.jpg');
+            @include mobile {
+                background-image: url($assets_folder + 'apple_music_small_2x.jpg');
+            }
+        }
+        &_give-back {
+            background-image: url($assets_folder + 'give_back_medium.jpg');
+        }
+        &_macbook {
+            background-image: url($assets_folder + 'macbook_pro_performance_medium.jpg');
+        }
+    }
     &__image-wrapper {
         background-repeat: no-repeat;
         background-size: cover;
         overflow: hidden;
         background-position: center;
         width: 100%;
-        &_full-size {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            z-index: -1;
-        }
         &_ipad {
             height: 335px;
             width: 515px;
@@ -46,27 +55,15 @@
                 background-image: url($assets_folder + 'ipad_medium.jpg');
             }
         }
-        &_macbook {
-            background-image: url($assets_folder + 'macbook_pro_performance_medium.jpg');
-        }
         &_homepod {
             width: 317px;
             height: 331px;
             background-image: url($assets_folder + 'homepod_medium.jpg');
         }
-        &_give-back {
-            background-image: url($assets_folder + 'give_back_medium.jpg');
-        }
         &_airpods {
             max-width: 417px;
             height: 387px;
             background-image: url($assets_folder + 'airpods_medium.jpg');
-        }
-        &_apple-music {
-            background-image: url($assets_folder + 'apple_music_large.jpg');
-            @include mobile {
-                background-image: url($assets_folder + 'apple_music_small_2x.jpg');
-            }
         }
         &_apple-watch {
             max-width: 404px;
