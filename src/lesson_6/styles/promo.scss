@@ -39,6 +39,9 @@
             background-image: url($assets_folder + 'macbook_pro_performance_medium.jpg');
         }
     }
+    &__music-icon {
+        padding-bottom: 40px;
+    }
     &__image-wrapper {
         background-repeat: no-repeat;
         background-size: cover;
@@ -63,6 +66,10 @@
         &_airpods {
             max-width: 417px;
             height: 387px;
+            @include tablet {
+                height: 314px;
+                width: 304px;
+            }
             background-image: url($assets_folder + 'airpods_medium.jpg');
         }
         &_apple-watch {
