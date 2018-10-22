@@ -1,6 +1,5 @@
 @import url('https://use.fontawesome.com/releases/v5.4.1/css/all.css');
 
-$link_color_dark: rgb(0, 112, 201);
 $link_color_light: rgb(101, 186, 255);
 $link_color_white: rgb(255, 255, 255);
 
@@ -62,9 +61,6 @@ $link_color_white: rgb(255, 255, 255);
         }
         &_white {
             color: $link_color_white;
-        }
-        & *:hover {
-            text-decoration: underline;
         }
         &::after {
             content: "\f105";

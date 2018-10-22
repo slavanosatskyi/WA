@@ -35,4 +35,7 @@ a {
   text-decoration: none;
   display: inline-block;
   color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
 }

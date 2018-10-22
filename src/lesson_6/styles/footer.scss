@@ -1,4 +1,7 @@
 $footer-background-color: rgb(242, 242, 242);
+$footer-text-color: rgb(136, 136, 136);
+$footer-list-text-color: rgb(85, 85, 85);
+$footer-border-color: rgb(214, 214, 214); 
 
 .footer {
     background-color: $footer-background-color;
@@ -12,23 +15,56 @@ $footer-background-color: rgb(242, 242, 242);
     }
     &__header {
         padding: 17px 0 20px 0;
-        border-bottom: 1px solid rgb(214, 214, 214);
-        color: rgb(136, 136, 136);
+        border-bottom: 1px solid $footer-border-color;
+        color: $footer-text-color;
     }
     &__body {
         padding-top: 20px;
         display: flex;
         width: 100%;
+        @include mobile {
+            flex-direction: column;
+        }
     }
     &__column {
         flex-grow: 1;
     }
     &__column-section {
         padding-bottom: 25px;
+        @include mobile {
+            display: none;
+            &_opened {
+                display: block;
+            }
+            & .footer__column-item {
+                margin-bottom: 17px;
+                padding-left: 20px;
+                &:first-child {
+                    padding-top: 20px;
+                }
+            }
+        }
     }
     &__column-header {
         font-size: inherit;
         color: rgb(51, 51, 51);
+        @include mobile {
+            margin-bottom: 0;
+            padding: 10px 0 10px;
+            font-size: 12px;
+            line-height: 1.33341;
+            font-weight: 400;
+            border-bottom: 1px solid $footer-border-color;
+            &::after {
+                content: '+';
+                float: right;
+                font-size: 14px;
+                font-weight: normal;
+                margin-top: -2px;
+                margin-right: 8px;
+                transition: transform 0.3s ease;
+            }
+        }
     }
     &__column-item {
         display: block;
@@ -38,9 +74,72 @@ $footer-background-color: rgb(242, 242, 242);
         }
     }
     &__column-link {
-        color: rgb(85, 85, 85);
+        color: $footer-list-text-color;
     }
     &__footer {
-        padding: 34px 0 14px;
+        color: $footer-text-color;
+        padding: 34px 0 21px;
+    }
+    &__link {
+        color: $link_color_dark;
+    }
+    &__shop {
+        padding-bottom: 8px;
+        margin-bottom: 7px;
+        border-bottom: 1px solid $footer-border-color;
+        @include mobile {
+            border-bottom: none;
+        }
+    }
+    &__legacy {
+        display: flex;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column-reverse;
+        }
+    }
+    &__legacy-details {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+        margin-top: 5px;
+        margin-right: 50px;
+    }
+    &__copyright {
+        margin-right: 30px;
+        padding-bottom: 10px;
+    }
+    &__legacy-links {
+        color: $footer-list-text-color;
+    }
+    &__legacy-link {
+        border-right: 1px solid $footer-border-color;
+        padding-right: 10px;
+        margin-right: 7px;
+        &:last-child {
+            border-right: none;
+            padding-right: 0;
+            margin-right: 0;
+        }
+    }
+    &__country {
+        display: flex;
+        align-items: center;
+        min-width: 90px;
+        padding-bottom: 15px
+    }
+    &__country-name {
+        padding-left: 5px;
+        color: $footer-list-text-color;
+        flex-shrink: 0;
+    }
+    &__flag {        
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+        background-image: url(https://images.apple.com/ac/flags/1/images/us/16.png);
+        background-position: left center;   
     }
 }
