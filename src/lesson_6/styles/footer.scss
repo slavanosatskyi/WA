@@ -64,6 +64,11 @@ $footer-border-color: rgb(214, 214, 214);
                 margin-right: 8px;
                 transition: transform 0.3s ease;
             }
+            &_opened {
+                &::after {
+                    transform: rotate(45deg);
+                }
+            }
         }
     }
     &__column-item {

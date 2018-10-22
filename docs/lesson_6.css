@@ -1,10 +1,10 @@
-* {
+@import url(https://use.fontawesome.com/releases/v5.4.1/css/all.css);* {
   box-sizing: border-box; }
 
 html {
   font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-  color: #505050; }
+  font-size: 16px;
+  color: black; }
 
 body {
   padding: 0;
@@ -26,7 +26,10 @@ ul {
 
 a {
   text-decoration: none;
-  display: inline-block; }
+  display: inline-block;
+  color: inherit; }
+  a:hover {
+    text-decoration: underline; }
 
 .col {
   padding-top: 5px;
@@ -35,167 +38,211 @@ a {
 .col-1 {
   width: 8.33333%;
   -ms-flex-preferred-size: 8.33333%;
-      flex-basis: 8.33333%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 8.33333%; }
+  @media screen and (min-width: 720px) {
+    .col-1 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-1 {
     width: 8.33333%;
     -ms-flex-preferred-size: 8.33333%;
-        flex-basis: 8.33333%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 8.33333%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-1 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-2 {
   width: 16.66667%;
   -ms-flex-preferred-size: 16.66667%;
-      flex-basis: 16.66667%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 16.66667%; }
+  @media screen and (min-width: 720px) {
+    .col-2 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-2 {
     width: 16.66667%;
     -ms-flex-preferred-size: 16.66667%;
-        flex-basis: 16.66667%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 16.66667%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-2 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-3 {
   width: 25.0%;
   -ms-flex-preferred-size: 25.0%;
-      flex-basis: 25.0%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 25.0%; }
+  @media screen and (min-width: 720px) {
+    .col-3 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-3 {
     width: 25.0%;
     -ms-flex-preferred-size: 25.0%;
-        flex-basis: 25.0%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 25.0%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-3 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-4 {
   width: 33.33333%;
   -ms-flex-preferred-size: 33.33333%;
-      flex-basis: 33.33333%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 33.33333%; }
+  @media screen and (min-width: 720px) {
+    .col-4 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-4 {
     width: 33.33333%;
     -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 33.33333%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-4 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-5 {
   width: 41.66667%;
   -ms-flex-preferred-size: 41.66667%;
-      flex-basis: 41.66667%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 41.66667%; }
+  @media screen and (min-width: 720px) {
+    .col-5 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-5 {
     width: 41.66667%;
     -ms-flex-preferred-size: 41.66667%;
-        flex-basis: 41.66667%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 41.66667%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-5 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-6 {
   width: 50.0%;
   -ms-flex-preferred-size: 50.0%;
-      flex-basis: 50.0%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 50.0%; }
+  @media screen and (min-width: 720px) {
+    .col-6 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-6 {
     width: 50.0%;
     -ms-flex-preferred-size: 50.0%;
-        flex-basis: 50.0%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 50.0%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-6 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-7 {
   width: 58.33333%;
   -ms-flex-preferred-size: 58.33333%;
-      flex-basis: 58.33333%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 58.33333%; }
+  @media screen and (min-width: 720px) {
+    .col-7 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-7 {
     width: 58.33333%;
     -ms-flex-preferred-size: 58.33333%;
-        flex-basis: 58.33333%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 58.33333%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-7 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-8 {
   width: 66.66667%;
   -ms-flex-preferred-size: 66.66667%;
-      flex-basis: 66.66667%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 66.66667%; }
+  @media screen and (min-width: 720px) {
+    .col-8 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-8 {
     width: 66.66667%;
     -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 66.66667%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-8 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-9 {
   width: 75.0%;
   -ms-flex-preferred-size: 75.0%;
-      flex-basis: 75.0%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 75.0%; }
+  @media screen and (min-width: 720px) {
+    .col-9 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-9 {
     width: 75.0%;
     -ms-flex-preferred-size: 75.0%;
-        flex-basis: 75.0%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 75.0%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-9 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-10 {
   width: 83.33333%;
   -ms-flex-preferred-size: 83.33333%;
-      flex-basis: 83.33333%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 83.33333%; }
+  @media screen and (min-width: 720px) {
+    .col-10 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-10 {
     width: 83.33333%;
     -ms-flex-preferred-size: 83.33333%;
-        flex-basis: 83.33333%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 83.33333%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-10 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-11 {
   width: 91.66667%;
   -ms-flex-preferred-size: 91.66667%;
-      flex-basis: 91.66667%;
-  padding-right: 5px;
-  padding-left: 5px; }
+      flex-basis: 91.66667%; }
+  @media screen and (min-width: 720px) {
+    .col-11 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 @media (max-width: 719.9px) {
   .col-xs-11 {
     width: 91.66667%;
     -ms-flex-preferred-size: 91.66667%;
-        flex-basis: 91.66667%;
-    padding-right: 5px;
-    padding-left: 5px; } }
+        flex-basis: 91.66667%; } }
+  @media screen and (max-width: 719.9px) and (min-width: 720px) {
+    .col-xs-11 {
+      padding-right: 5px;
+      padding-left: 5px; } }
 
 .col-12 {
   width: 100.0%;
@@ -334,12 +381,136 @@ a {
 
 .footer {
   background-color: #f2f2f2;
-  height: 100px;
-  width: 100%; }
+  width: 100%;
+  font-size: 0.72rem; }
+  .footer__content {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 22px; }
+  .footer__header {
+    padding: 17px 0 20px 0;
+    border-bottom: 1px solid #d6d6d6;
+    color: #888888; }
+  .footer__body {
+    padding-top: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+    @media (max-width: 719.9px) {
+      .footer__body {
+        -ms-flex-direction: column;
+            flex-direction: column; } }
+  .footer__column {
+    -ms-flex-positive: 1;
+        flex-grow: 1; }
+  .footer__column-section {
+    padding-bottom: 25px; }
+    @media (max-width: 719.9px) {
+      .footer__column-section {
+        display: none; }
+        .footer__column-section_opened {
+          display: block; }
+        .footer__column-section .footer__column-item {
+          margin-bottom: 17px;
+          padding-left: 20px; }
+          .footer__column-section .footer__column-item:first-child {
+            padding-top: 20px; } }
+  .footer__column-header {
+    font-size: inherit;
+    color: #333333; }
+    @media (max-width: 719.9px) {
+      .footer__column-header {
+        margin-bottom: 0;
+        padding: 10px 0 10px;
+        font-size: 12px;
+        line-height: 1.33341;
+        font-weight: 400;
+        border-bottom: 1px solid #d6d6d6; }
+        .footer__column-header::after {
+          content: '+';
+          float: right;
+          font-size: 14px;
+          font-weight: normal;
+          margin-top: -2px;
+          margin-right: 8px;
+          transition: transform 0.3s ease; }
+        .footer__column-header_opened::after {
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); } }
+  .footer__column-item {
+    display: block;
+    margin-bottom: 10px; }
+    .footer__column-item:last-child {
+      margin-bottom: 0; }
+  .footer__column-link {
+    color: #555555; }
+  .footer__footer {
+    color: #888888;
+    padding: 34px 0 21px; }
+  .footer__link {
+    color: #0070c9; }
+  .footer__shop {
+    padding-bottom: 8px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #d6d6d6; }
+    @media (max-width: 719.9px) {
+      .footer__shop {
+        border-bottom: none; } }
+  .footer__legacy {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    @media (max-width: 719.9px) {
+      .footer__legacy {
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; } }
+  .footer__legacy-details {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    margin-top: 5px;
+    margin-right: 50px; }
+  .footer__copyright {
+    margin-right: 30px;
+    padding-bottom: 10px; }
+  .footer__legacy-links {
+    color: #555555; }
+  .footer__legacy-link {
+    border-right: 1px solid #d6d6d6;
+    padding-right: 10px;
+    margin-right: 7px; }
+    .footer__legacy-link:last-child {
+      border-right: none;
+      padding-right: 0;
+      margin-right: 0; }
+  .footer__country {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    min-width: 90px;
+    padding-bottom: 15px; }
+  .footer__country-name {
+    padding-left: 5px;
+    color: #555555;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
+  .footer__flag {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    background-image: url(https://images.apple.com/ac/flags/1/images/us/16.png);
+    background-position: left center; }
 
 .promo {
-  position: relative;
-  z-index: -1;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -363,22 +534,28 @@ a {
   .promo_theme-dark {
     background-color: black;
     color: white; }
-  .promo__description {
-    background: green;
-    width: 100px;
-    height: 100px; }
+  .promo__background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-position: center; }
+    .promo__background_apple-music {
+      background-image: url(./assets/images/apple_music_large.jpg); }
+      @media (max-width: 719.9px) {
+        .promo__background_apple-music {
+          background-image: url(./assets/images/apple_music_small_2x.jpg); } }
+    .promo__background_give-back {
+      background-image: url(./assets/images/give_back_medium.jpg); }
+    .promo__background_macbook {
+      background-image: url(./assets/images/macbook_pro_performance_medium.jpg); }
+  .promo__music-icon {
+    padding-bottom: 40px; }
   .promo__image-wrapper {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
     background-position: center;
     width: 100%; }
-    .promo__image-wrapper_full-size {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      z-index: -1; }
     .promo__image-wrapper_ipad {
       height: 335px;
       width: 515px;
@@ -388,23 +565,18 @@ a {
           width: 100%;
           background-size: contain;
           background-image: url(./assets/images/ipad_medium.jpg); } }
-    .promo__image-wrapper_macbook {
-      background-image: url(./assets/images/macbook_pro_performance_medium.jpg); }
     .promo__image-wrapper_homepod {
       width: 317px;
       height: 331px;
       background-image: url(./assets/images/homepod_medium.jpg); }
-    .promo__image-wrapper_give-back {
-      background-image: url(./assets/images/give_back_medium.jpg); }
     .promo__image-wrapper_airpods {
       max-width: 417px;
       height: 387px;
       background-image: url(./assets/images/airpods_medium.jpg); }
-    .promo__image-wrapper_apple-music {
-      background-image: url(./assets/images/apple_music_large.jpg); }
-      @media (max-width: 719.9px) {
-        .promo__image-wrapper_apple-music {
-          background-image: url(./assets/images/apple_music_small_2x.jpg); } }
+      @media (max-width: 979.9px) {
+        .promo__image-wrapper_airpods {
+          height: 314px;
+          width: 304px; } }
     .promo__image-wrapper_apple-watch {
       max-width: 404px;
       height: 738px;
@@ -434,3 +606,61 @@ a {
         .promo__image-wrapper_iphone-xs {
           height: 331px;
           background-image: url(./assets/images/hero-iphone-xs_small_2x.jpg); } }
+
+.description {
+  text-align: center;
+  padding-top: 54px; }
+  .description__primary-text {
+    font-size: 2.4rem;
+    width: 100%;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 14px; }
+    .description__primary-text_iphone-xs {
+      margin-top: 42px;
+      background-image: url(./assets/images/iphone_xs_logo_hero_large_2x.png); }
+    .description__primary-text_iphone-xr {
+      background-image: url(./assets/images/iphone_xr_logo_hero_medium.png); }
+    .description__primary-text_apple-watch {
+      background-image: url(./assets/images/apple_watch_series_4_logo_hero_medium.jpg);
+      height: 78px; }
+      @media (max-width: 979.9px) {
+        .description__primary-text_apple-watch {
+          height: 55px; } }
+      @media (max-width: 719.9px) {
+        .description__primary-text_apple-watch {
+          height: 47px; } }
+    .description__primary-text_apple-music {
+      background-image: url(./assets/images/music_medium.png);
+      height: 31px; }
+      @media (max-width: 979.9px) {
+        .description__primary-text_apple-music {
+          height: 25px; } }
+  .description__secondary-text {
+    margin-top: 3px;
+    font-size: 1.4rem; }
+    @media (max-width: 719.9px) {
+      .description__secondary-text > br {
+        display: none; } }
+  .description__links-container {
+    margin-top: 10px;
+    font-size: 1.2rem; }
+  .description__links_dark {
+    color: #0070c9; }
+  .description__links_light {
+    color: #65baff; }
+  .description__links_white {
+    color: white; }
+  .description__links::after {
+    content: "\F105";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    vertical-align: center;
+    vertical-align: bottom; }
+  .description__links_buy {
+    padding-left: 30px; }
+  .description__links_simple-text {
+    margin-top: 13.6px;
+    color: #cccccc; }
