@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px; }
+
+body {
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  background-color: #64d723;
+  border-radius: 2%;
+  box-shadow: 3px 3px 15px rgba(130, 130, 130, 0.5);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center; }
+  .container__switching-element {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 20px; }
+  .container__device {
+    width: 256px;
+    height: 256px;
+    background-image: url(./assets/images/nexus-one-off.png); }
+    .container__device_on {
+      position: relative;
+      left: -3px;
+      top: -1px;
+      background-image: url(./assets/images/nexus-one-on.png); }
+
+.toggle {
+  background-color: blue;
+  border-radius: 12px;
+  width: 55px;
+  height: 25px;
+  position: relative;
+  transition: all 0.3s ease; }
+  .toggle::after {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    transition: left .2s ease; }
+  .toggle_off {
+    background-color: lightgray; }
+    .toggle_off::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      top: 2px; }
