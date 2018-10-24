@@ -25,15 +25,7 @@ p {
       transform: translateX(-50%);
   background-color: #64d723;
   border-radius: 2%;
-  box-shadow: 3px 3px 15px rgba(130, 130, 130, 0.5);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-align: center;
-      align-items: center; }
+  box-shadow: 3px 3px 15px rgba(130, 130, 130, 0.5); }
   .container__switching-element-section {
     display: -ms-flexbox;
     display: flex;
@@ -66,7 +58,11 @@ p {
   .container__accordion-section {
     padding-top: 60px;
     -ms-flex-negative: 0;
-        flex-shrink: 0; }
+        flex-shrink: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
 
 .toggle {
   background-color: blue;

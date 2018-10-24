@@ -7,10 +7,7 @@
     background-color: rgb(100, 215, 35);
     border-radius: 2%;
     box-shadow: 3px 3px 15px rgba(130, 130, 130, .5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    
     &__switching-element-section {
         display: flex;
         justify-content: space-around;
@@ -39,5 +36,7 @@
     &__accordion-section {
         padding-top: 60px;
         flex-shrink: 0;
+        display: flex;
+        justify-content: center;
     }
 }
