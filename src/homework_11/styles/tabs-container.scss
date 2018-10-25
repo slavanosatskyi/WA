@@ -1,0 +1,30 @@
+$tabs-widget-font-size: 22px;
+
+.tabs-container {
+    width: 520px;
+    height: 365px;
+    &__tabs-section {
+        display: flex;
+        justify-content: stretch;
+    }
+    &__tab {
+        flex-grow: 1;
+        color: rgb(255, 255, 255);
+        font-size: $tabs-widget-font-size;
+        background: rgb(4, 8, 44);
+        padding: 24px 39px 30px 39px;
+        cursor: pointer;
+        &_active {
+            background: rgb(20, 38, 225);
+        }
+    }
+    &__content {
+        font-size: $tabs-widget-font-size;
+        color: rgb(101, 101, 101);
+        background: rgb(255, 255, 255);
+        padding: 24px 30px 22px 27px;
+        overflow: hidden;
+        font-weight: 300;
+        line-height: 1.55;
+    }
+}
