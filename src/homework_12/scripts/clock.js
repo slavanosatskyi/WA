@@ -1,3 +1,18 @@
+const months = {
+    0: 'Jan',
+    1: 'Feb',
+    2: 'Mar',
+    3: 'Apr',
+    4: 'May',
+    5: 'Jun',
+    6: 'Jul',
+    7: 'Aug',
+    8: 'Sep',
+    9: 'Oct',
+    10: 'Nov',
+    11: 'Dec'
+};
+
 export class Clock {
     constructor(parentObj) {
         this.hours = null;
@@ -11,6 +26,9 @@ export class Clock {
     }
 
     render() {
+        const buttonsSection = document.createElement('div');
+        buttonsSection.classList.add('clock__buttons-section');
+        
         const stopButton = document.createElement('button');
         stopButton.textContent = 'Stop';
 
@@ -34,6 +52,14 @@ export class Clock {
                 this.hideSeconds();
             } else {
                 this.showSeconds();
+            }
+        });
+
+        clock.addEventListener('click', () => {
+            if (this.isDateVisible()) {
+                this.hideDate();
+            } else {
+                this.showDate();
             }
         });
 
@@ -64,6 +90,9 @@ export class Clock {
         this.updateTime();
         this.updateDate();
 
+        buttonsSection.appendChild(stopButton);
+        buttonsSection.appendChild(startButton);
+
         time.appendChild(this.hours);
         time.appendChild(this.firstDelimeter);
         time.appendChild(this.minutes);
@@ -72,9 +101,8 @@ export class Clock {
 
         clock.appendChild(time);
         clock.appendChild(this.date);
+        clock.appendChild(buttonsSection);
 
-        this.parentObj.appendChild(stopButton);
-        this.parentObj.appendChild(startButton);
         this.parentObj.appendChild(clock);
     }
 
@@ -93,7 +121,7 @@ export class Clock {
 
     updateDate() {
         const now = new Date();
-        this.date.textContent = now.getDate() + '/' + now.getMonth() + '/' + now.getFullYear(); 
+        this.date.textContent = now.getDate() + '/' + months[now.getMonth()] + '/' + now.getFullYear(); 
     }
 
     stopUpdate() {
@@ -112,5 +140,17 @@ export class Clock {
 
     areSecondsVisible() {
         return this.seconds.style.display != 'none';
+    }
+
+    hideDate() {
+        this.date.style.display = 'none';
+    }
+
+    showDate() {
+        this.date.style.display = 'block';
+    }
+
+    isDateVisible() {
+        return this.date.style.display != 'none';
     }
 }
