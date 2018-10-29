@@ -150,14 +150,16 @@ var Clock = exports.Clock = function () {
             var stopButton = document.createElement('button');
             stopButton.textContent = 'Stop';
 
-            stopButton.addEventListener('click', function () {
+            stopButton.addEventListener('click', function (event) {
+                event.stopPropagation();
                 _this.stopUpdate();
             });
 
             var startButton = document.createElement('button');
             startButton.textContent = 'Start';
 
-            startButton.addEventListener('click', function () {
+            startButton.addEventListener('click', function (event) {
+                event.stopPropagation();
                 _this.startUpdate();
             });
 

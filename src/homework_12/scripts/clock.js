@@ -32,14 +32,16 @@ export class Clock {
         const stopButton = document.createElement('button');
         stopButton.textContent = 'Stop';
 
-        stopButton.addEventListener('click', () => {
+        stopButton.addEventListener('click', (event) => {
+            event.stopPropagation();
             this.stopUpdate();
         });
 
         const startButton = document.createElement('button');
         startButton.textContent = 'Start';
 
-        startButton.addEventListener('click', () => {
+        startButton.addEventListener('click', (event) => {
+            event.stopPropagation();
             this.startUpdate();
         });
 
