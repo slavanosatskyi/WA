@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 361);
+/******/ 	return __webpack_require__(__webpack_require__.s = 360);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -81,7 +81,7 @@
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(366);
+  var ReactPropTypesSecret = __webpack_require__(365);
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -172,112 +172,12 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(369);
+  module.exports = __webpack_require__(368);
 } else {
-  module.exports = __webpack_require__(370);
+  module.exports = __webpack_require__(369);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
-
-/***/ }),
-
-/***/ 130:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var HTTPService = exports.HTTPService = function () {
-  function HTTPService() {
-    _classCallCheck(this, HTTPService);
-  }
-
-  _createClass(HTTPService, [{
-    key: 'get',
-    value: function get(url, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', url);
-      xhr.send();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }, {
-    key: 'post',
-    value: function post(url, data, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(typeof data !== 'string' ? JSON.stringify(data) : data);
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }, {
-    key: 'delete',
-    value: function _delete(url, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('DELETE', url);
-
-      xhr.send();
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }, {
-    key: 'put',
-    value: function put(url, data, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('PUT', url);
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(data));
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }]);
-
-  return HTTPService;
-}();
 
 /***/ }),
 
@@ -472,11 +372,23 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ 360:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(361);
+
+
+/***/ }),
+
 /***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(362);
+"use strict";
 
+
+__webpack_require__(362);
+
+__webpack_require__(380);
 
 /***/ }),
 
@@ -486,27 +398,15 @@ module.exports = __webpack_require__(362);
 "use strict";
 
 
-__webpack_require__(363);
-
-__webpack_require__(378);
-
-/***/ }),
-
-/***/ 363:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 var _react = __webpack_require__(47);
 
 var React = _interopRequireWildcard(_react);
 
-var _reactDom = __webpack_require__(367);
+var _reactDom = __webpack_require__(366);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Comments = __webpack_require__(375);
+var _Comments = __webpack_require__(374);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -516,7 +416,7 @@ _reactDom2.default.render(React.createElement(_Comments.Comments, null), documen
 
 /***/ }),
 
-/***/ 364:
+/***/ 363:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -548,7 +448,7 @@ isValidElement:O,version:"16.6.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 /***/ }),
 
-/***/ 365:
+/***/ 364:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2297,7 +2197,7 @@ module.exports = react;
 
 /***/ }),
 
-/***/ 366:
+/***/ 365:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2317,7 +2217,7 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 
-/***/ 367:
+/***/ 366:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2355,16 +2255,16 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(368);
+  module.exports = __webpack_require__(367);
 } else {
-  module.exports = __webpack_require__(371);
+  module.exports = __webpack_require__(370);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
 
 /***/ }),
 
-/***/ 368:
+/***/ 367:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2622,7 +2522,7 @@ var mj={default:Yi},nj=mj&&Yi||mj;module.exports=nj.default||nj;
 
 /***/ }),
 
-/***/ 369:
+/***/ 368:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2649,7 +2549,7 @@ a;a.next=d;a.previous=b}return a};exports.unstable_cancelCallback=function(a){va
 
 /***/ }),
 
-/***/ 370:
+/***/ 369:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3312,7 +3212,7 @@ exports.unstable_getCurrentPriorityLevel = unstable_getCurrentPriorityLevel;
 
 /***/ }),
 
-/***/ 371:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3337,7 +3237,7 @@ var React = __webpack_require__(47);
 var _assign = __webpack_require__(66);
 var checkPropTypes = __webpack_require__(128);
 var scheduler = __webpack_require__(129);
-var tracing = __webpack_require__(372);
+var tracing = __webpack_require__(371);
 
 /**
  * Use invariant() to assert state which your program assumes to be true.
@@ -22211,23 +22111,23 @@ module.exports = reactDom;
 
 /***/ }),
 
-/***/ 372:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(373);
+  module.exports = __webpack_require__(372);
 } else {
-  module.exports = __webpack_require__(374);
+  module.exports = __webpack_require__(373);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
 
 /***/ }),
 
-/***/ 373:
+/***/ 372:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22245,7 +22145,7 @@ Object.defineProperty(exports,"__esModule",{value:!0});var b=0;exports.__interac
 
 /***/ }),
 
-/***/ 374:
+/***/ 373:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22670,26 +22570,32 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 /***/ }),
 
-/***/ 375:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.Comments = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+__webpack_require__(375);
+
+__webpack_require__(376);
+
 var _react = __webpack_require__(47);
 
 var React = _interopRequireWildcard(_react);
 
-var _CommentsList = __webpack_require__(376);
+var _CommentsList = __webpack_require__(377);
 
-var _CreateCommentSection = __webpack_require__(377);
+var _CreateCommentSection = __webpack_require__(378);
+
+var _httpService = __webpack_require__(379);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -22699,33 +22605,102 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var URL = 'https://evening-dawn-11092.herokuapp.com/comments';
+
 var Comments = exports.Comments = function (_React$Component) {
-  _inherits(Comments, _React$Component);
+    _inherits(Comments, _React$Component);
 
-  function Comments() {
-    _classCallCheck(this, Comments);
+    function Comments() {
+        _classCallCheck(this, Comments);
 
-    return _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).apply(this, arguments));
-  }
+        var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
 
-  _createClass(Comments, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        { className: 'Comments' },
-        React.createElement(_CommentsList.CommentsList, null),
-        React.createElement(_CreateCommentSection.CreateCommentSection, null)
-      );
+        _this.httpService = new _httpService.HTTPService();
+        _this.onSubmit = _this.onSubmit.bind(_this);
+        _this.valueChange = _this.valueChange.bind(_this);
+        _this.state = {
+            comments: []
+        };
+
+        _this.fetchData();
+        return _this;
     }
-  }]);
 
-  return Comments;
+    _createClass(Comments, [{
+        key: 'fetchData',
+        value: function fetchData() {
+            var _this2 = this;
+
+            this.httpService.get(URL, function (comments) {
+                _this2.setState(function (oldState) {
+                    var newState = Object.assign({}, oldState);
+                    newState.comments = comments;
+                    return newState;
+                });
+            });
+        }
+    }, {
+        key: 'onSubmit',
+        value: function onSubmit(e) {
+            var _this3 = this;
+
+            e.preventDefault();
+
+            if (this.textAreaValue === undefined || this.textAreaValue === '') {
+                return;
+            }
+
+            var comment = {
+                author: 'Jack London',
+                text: this.textAreaValue
+            };
+
+            this.httpService.post(URL, comment, function (comment) {
+                _this3.setState(function (oldState) {
+                    var newState = Object.assign({}, oldState);
+                    newState.comments.push(comment);
+                    return newState;
+                });
+            });
+        }
+    }, {
+        key: 'valueChange',
+        value: function valueChange(e) {
+            this.textAreaValue = e.target.value;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                { className: 'comments' },
+                React.createElement(_CommentsList.CommentsList, { comments: this.state.comments }),
+                React.createElement(_CreateCommentSection.CreateCommentSection, { onSubmit: this.onSubmit,
+                    onChange: this.valueChange })
+            );
+        }
+    }]);
+
+    return Comments;
 }(React.Component);
 
 /***/ }),
 
+/***/ 375:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 376:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22742,8 +22717,6 @@ var _react = __webpack_require__(47);
 
 var React = _interopRequireWildcard(_react);
 
-var _httpService = __webpack_require__(130);
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22752,67 +22725,50 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var URL = 'https://evening-dawn-11092.herokuapp.com/comments';
-
 var CommentsList = exports.CommentsList = function (_React$Component) {
     _inherits(CommentsList, _React$Component);
 
     function CommentsList() {
         _classCallCheck(this, CommentsList);
 
-        var _this = _possibleConstructorReturn(this, (CommentsList.__proto__ || Object.getPrototypeOf(CommentsList)).call(this));
-
-        _this.httpService = new _httpService.HTTPService();
-        _this.state = {
-            comments: []
-        };
-
-        _this.fetchData();
-        return _this;
+        return _possibleConstructorReturn(this, (CommentsList.__proto__ || Object.getPrototypeOf(CommentsList)).apply(this, arguments));
     }
 
     _createClass(CommentsList, [{
-        key: 'fetchData',
-        value: function fetchData() {
-            var _this2 = this;
-
-            this.httpService.get(URL, function (comments) {
-                _this2.setState(function (oldState) {
-                    var newState = Object.assign({}, oldState);
-                    newState.comments = comments;
-                    return newState;
-                });
-            });
-        }
-    }, {
         key: 'render',
         value: function render() {
-            var comments = this.state.comments.map(function (comment, i) {
+            var comments = this.props.comments.map(function (comment, i) {
+                var formatDate = function formatDate(dateString) {
+                    var date = new Date(dateString);
+                    return date.toLocaleTimeString() + ' ' + date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+                };
                 return React.createElement(
                     'li',
-                    { key: i },
-                    React.createElement(
-                        'h3',
-                        { className: 'comments__author' },
-                        'Author: ',
-                        comment.author
-                    ),
+                    { key: i, className: 'comment' },
                     React.createElement(
                         'div',
-                        { className: 'comments__date' },
-                        'Date: ',
-                        comment.date
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'comments__text' },
+                        { className: 'comment__text' },
                         comment.text
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'comment__footer' },
+                        React.createElement(
+                            'h3',
+                            { className: 'comment__author' },
+                            comment.author
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'comment__date' },
+                            formatDate(comment.date)
+                        )
                     )
                 );
             });
             return React.createElement(
                 'ul',
-                null,
+                { className: 'comments__container' },
                 comments
             );
         }
@@ -22823,7 +22779,7 @@ var CommentsList = exports.CommentsList = function (_React$Component) {
 
 /***/ }),
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22840,8 +22796,6 @@ var _react = __webpack_require__(47);
 
 var React = _interopRequireWildcard(_react);
 
-var _httpService = __webpack_require__(130);
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22850,75 +22804,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var URL = 'https://evening-dawn-11092.herokuapp.com/comments';
-
 var CreateCommentSection = exports.CreateCommentSection = function (_React$Component) {
     _inherits(CreateCommentSection, _React$Component);
 
     function CreateCommentSection() {
         _classCallCheck(this, CreateCommentSection);
 
-        var _this = _possibleConstructorReturn(this, (CreateCommentSection.__proto__ || Object.getPrototypeOf(CreateCommentSection)).call(this));
-
-        _this.httpService = new _httpService.HTTPService();
-        _this.onSubmit = _this.onSubmit.bind(_this);
-        _this.valueChange = _this.valueChange.bind(_this);
-        _this.state = {
-            author: 'Jeck London',
-            text: ''
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (CreateCommentSection.__proto__ || Object.getPrototypeOf(CreateCommentSection)).apply(this, arguments));
     }
 
     _createClass(CreateCommentSection, [{
-        key: 'onSubmit',
-        value: function onSubmit(e) {
-            var _this2 = this;
-
-            e.preventDefault();
-
-            this.httpService.post(URL, this.state, function (comment) {
-                _this2.setState(function (oldState) {
-                    var newState = Object.assign({}, oldState);
-                    newState.author = comment.author;
-                    newState.text = comment.text;
-                    return newState;
-                });
-            });
-        }
-    }, {
-        key: 'valueChange',
-        value: function valueChange(e) {
-            var value = e.target.value;
-            this.setState(function (oldState) {
-                var newState = Object.assign({}, oldState);
-                newState.text = value;
-                return newState;
-            });
-        }
-    }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'form',
-                { onSubmit: this.onSubmit },
+                "form",
+                { onSubmit: this.props.onSubmit },
                 React.createElement(
-                    'h2',
+                    "h2",
                     null,
-                    'New comment:'
+                    "New comment:"
                 ),
-                React.createElement('textarea', {
-                    value: this.state.text,
-                    onChange: this.valueChange,
-                    cols: '30',
-                    rows: '10' }),
+                React.createElement("textarea", {
+                    onChange: this.props.onChange,
+                    cols: "30",
+                    rows: "10" }),
                 React.createElement(
-                    'div',
+                    "div",
                     null,
                     React.createElement(
-                        'button',
-                        { type: 'submit' },
-                        'Add comment'
+                        "button",
+                        { type: "submit" },
+                        "Add comment"
                     )
                 )
             );
@@ -22930,7 +22846,107 @@ var CreateCommentSection = exports.CreateCommentSection = function (_React$Compo
 
 /***/ }),
 
-/***/ 378:
+/***/ 379:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var HTTPService = exports.HTTPService = function () {
+  function HTTPService() {
+    _classCallCheck(this, HTTPService);
+  }
+
+  _createClass(HTTPService, [{
+    key: 'get',
+    value: function get(url, successCallback, errorCallback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var parsedData = JSON.parse(xhr.response);
+            successCallback(parsedData);
+          } else {
+            errorCallback(xhr);
+          }
+        }
+      };
+    }
+  }, {
+    key: 'post',
+    value: function post(url, data, successCallback, errorCallback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader('content-type', 'application/json');
+      xhr.send(typeof data !== 'string' ? JSON.stringify(data) : data);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var parsedData = JSON.parse(xhr.response);
+            successCallback(parsedData);
+          } else {
+            errorCallback(xhr);
+          }
+        }
+      };
+    }
+  }, {
+    key: 'delete',
+    value: function _delete(url, successCallback, errorCallback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('DELETE', url);
+
+      xhr.send();
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var parsedData = JSON.parse(xhr.response);
+            successCallback(parsedData);
+          } else {
+            errorCallback(xhr);
+          }
+        }
+      };
+    }
+  }, {
+    key: 'put',
+    value: function put(url, data, successCallback, errorCallback) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('PUT', url);
+      xhr.setRequestHeader('content-type', 'application/json');
+      xhr.send(JSON.stringify(data));
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var parsedData = JSON.parse(xhr.response);
+            successCallback(parsedData);
+          } else {
+            errorCallback(xhr);
+          }
+        }
+      };
+    }
+  }]);
+
+  return HTTPService;
+}();
+
+/***/ }),
+
+/***/ 380:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -22944,9 +22960,9 @@ var CreateCommentSection = exports.CreateCommentSection = function (_React$Compo
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(364);
+  module.exports = __webpack_require__(363);
 } else {
-  module.exports = __webpack_require__(365);
+  module.exports = __webpack_require__(364);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
