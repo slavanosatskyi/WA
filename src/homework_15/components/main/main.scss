@@ -1,0 +1,22 @@
+.main {
+    flex-grow: 2;
+    height: 100vh;
+    flex-basis: 300px;
+    width: 100%;
+    transition: margin-left .5s;
+    padding: 16px;
+    &__narrowed {
+        margin-left: 250px;
+    }
+    &__openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        &:hover {
+            background-color: #444;
+        }
+    }
+}

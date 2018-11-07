@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 390);
+/******/ 	return __webpack_require__(__webpack_require__.s = 380);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -20532,27 +20532,34 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
-/***/ 390:
+/***/ 380:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(391);
+module.exports = __webpack_require__(381);
 
 
 /***/ }),
 
-/***/ 391:
+/***/ 381:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(392);
+__webpack_require__(382);
 
-__webpack_require__(398);
+__webpack_require__(383);
 
 /***/ }),
 
-/***/ 392:
+/***/ 382:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20566,17 +20573,17 @@ var _reactDom = __webpack_require__(100);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Comments = __webpack_require__(393);
+var _Container = __webpack_require__(384);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-_reactDom2.default.render(React.createElement(_Comments.Comments, null), document.querySelector('#root'));
+_reactDom2.default.render(React.createElement(_Container.Container, null), document.querySelector('#root'));
 
 /***/ }),
 
-/***/ 393:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20585,23 +20592,19 @@ _reactDom2.default.render(React.createElement(_Comments.Comments, null), documen
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Comments = undefined;
+exports.Container = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(394);
-
-__webpack_require__(395);
 
 var _react = __webpack_require__(15);
 
 var React = _interopRequireWildcard(_react);
 
-var _CommentsList = __webpack_require__(396);
+__webpack_require__(385);
 
-var _CreateCommentSection = __webpack_require__(397);
+var _Main = __webpack_require__(386);
 
-var _httpService = __webpack_require__(96);
+var _Sidebar = __webpack_require__(388);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -20611,130 +20614,68 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var URL = 'https://evening-dawn-11092.herokuapp.com/comments';
+var Container = exports.Container = function (_React$Component) {
+    _inherits(Container, _React$Component);
 
-var Comments = exports.Comments = function (_React$Component) {
-    _inherits(Comments, _React$Component);
+    function Container() {
+        _classCallCheck(this, Container);
 
-    function Comments() {
-        _classCallCheck(this, Comments);
+        var _this = _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).call(this));
 
-        var _this = _possibleConstructorReturn(this, (Comments.__proto__ || Object.getPrototypeOf(Comments)).call(this));
-
-        _this.httpService = new _httpService.HTTPService();
-        _this.onSubmit = _this.onSubmit.bind(_this);
-        _this.valueChange = _this.valueChange.bind(_this);
-        _this.deleteComment = _this.deleteComment.bind(_this);
         _this.state = {
-            comments: []
+            isSideBarOpen: true
         };
-
-        _this.fetchData();
+        _this.closeSidePanel = _this.closeSidePanel.bind(_this);
+        _this.openSidePanel = _this.openSidePanel.bind(_this);
         return _this;
     }
 
-    _createClass(Comments, [{
-        key: 'fetchData',
-        value: function fetchData() {
-            var _this2 = this;
-
-            this.httpService.get(URL, function (comments) {
-                _this2.setState(function (oldState) {
-                    var newState = Object.assign({}, oldState);
-                    newState.comments = comments;
-                    return newState;
-                });
-            });
+    _createClass(Container, [{
+        key: 'closeSidePanel',
+        value: function closeSidePanel() {
+            this.changeSidePanelState(false);
         }
     }, {
-        key: 'onSubmit',
-        value: function onSubmit(e) {
-            var _this3 = this;
-
-            e.preventDefault();
-
-            if (this.textAreaValue === undefined || this.textAreaValue === '') {
-                return;
-            }
-
-            var comment = {
-                author: 'Jack London',
-                text: this.textAreaValue
-            };
-
-            this.httpService.post(URL, comment, function (comment) {
-                _this3.setState(function (oldState) {
-                    var newState = Object.assign({}, oldState);
-                    newState.comments.push(comment);
-                    return newState;
-                });
-            });
+        key: 'openSidePanel',
+        value: function openSidePanel() {
+            this.changeSidePanelState(true);
         }
     }, {
-        key: 'valueChange',
-        value: function valueChange(e) {
-            this.textAreaValue = e.target.value;
-        }
-    }, {
-        key: 'deleteComment',
-        value: function deleteComment(commentId) {
-            var _this4 = this;
-
-            this.httpService.delete(URL + '/' + commentId, function () {
-                _this4.setState(function (oldState) {
-                    var newState = Object.assign({}, oldState);
-                    var index = _this4.findCommentIndexByCommentId(commentId);
-                    if (index !== -1) {
-                        newState.comments.splice(index);
-                    }
-
-                    return newState;
-                });
+        key: 'changeSidePanelState',
+        value: function changeSidePanelState(isOpened) {
+            this.setState(function (oldState) {
+                var newState = Object.assign({}, oldState);
+                newState.isSideBarOpen = isOpened;
+                return newState;
             });
-        }
-    }, {
-        key: 'findCommentIndexByCommentId',
-        value: function findCommentIndexByCommentId(commentId) {
-            var comment = this.state.comments.find(function (comment) {
-                return comment.id === commentId;
-            });
-
-            return comment !== undefined ? this.state.comments.indexOf(comment) : -1;
         }
     }, {
         key: 'render',
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'comments' },
-                React.createElement(_CommentsList.CommentsList, { comments: this.state.comments,
-                    deleteComment: this.deleteComment }),
-                React.createElement(_CreateCommentSection.CreateCommentSection, { onSubmit: this.onSubmit,
-                    onChange: this.valueChange })
+                { className: 'container' },
+                React.createElement(_Sidebar.Sidebar, { onCloseBtnClick: this.closeSidePanel,
+                    isSideBarOpen: this.state.isSideBarOpen }),
+                React.createElement(_Main.Main, { onOpenBtnClick: this.openSidePanel,
+                    isSideBarOpen: this.state.isSideBarOpen })
             );
         }
     }]);
 
-    return Comments;
+    return Container;
 }(React.Component);
 
 /***/ }),
 
-/***/ 394:
+/***/ 385:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 395:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 396:
+/***/ 386:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20743,13 +20684,15 @@ var Comments = exports.Comments = function (_React$Component) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.CommentsList = undefined;
+exports.Main = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(15);
 
 var React = _interopRequireWildcard(_react);
+
+__webpack_require__(387);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -20759,140 +20702,127 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CommentsList = exports.CommentsList = function (_React$Component) {
-    _inherits(CommentsList, _React$Component);
+var Main = exports.Main = function (_React$Component) {
+    _inherits(Main, _React$Component);
 
-    function CommentsList() {
-        _classCallCheck(this, CommentsList);
+    function Main() {
+        _classCallCheck(this, Main);
 
-        return _possibleConstructorReturn(this, (CommentsList.__proto__ || Object.getPrototypeOf(CommentsList)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
     }
 
-    _createClass(CommentsList, [{
+    _createClass(Main, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
-            var comments = this.props.comments.map(function (comment, i) {
-                var formatDate = function formatDate(dateString) {
-                    var date = new Date(dateString);
-                    return date.toLocaleTimeString() + ' ' + date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
-                };
-
-                var deleteComment = function deleteComment() {
-                    _this2.props.deleteComment(comment.id);
-                };
-
-                return React.createElement(
-                    'li',
-                    { key: i, className: 'comment', id: "comment" + comment.id },
-                    React.createElement(
-                        'div',
-                        { className: 'comment__text' },
-                        comment.text
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'comment__footer' },
-                        React.createElement(
-                            'h3',
-                            { className: 'comment__author' },
-                            comment.author
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'comment__date' },
-                            formatDate(comment.date)
-                        ),
-                        React.createElement(
-                            'button',
-                            { className: 'comment__delete', onClick: deleteComment },
-                            'Delete'
-                        )
-                    )
-                );
-            });
+            var classList = "main";
+            if (this.props.isSideBarOpen) {
+                classList += " main__narrowed";
+            }
             return React.createElement(
-                'ul',
-                { className: 'comments__container' },
-                comments
-            );
-        }
-    }]);
-
-    return CommentsList;
-}(React.Component);
-
-/***/ }),
-
-/***/ 397:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.CreateCommentSection = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(15);
-
-var React = _interopRequireWildcard(_react);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var CreateCommentSection = exports.CreateCommentSection = function (_React$Component) {
-    _inherits(CreateCommentSection, _React$Component);
-
-    function CreateCommentSection() {
-        _classCallCheck(this, CreateCommentSection);
-
-        return _possibleConstructorReturn(this, (CreateCommentSection.__proto__ || Object.getPrototypeOf(CreateCommentSection)).apply(this, arguments));
-    }
-
-    _createClass(CreateCommentSection, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "form",
-                { onSubmit: this.props.onSubmit },
+                'div',
+                { className: classList },
                 React.createElement(
-                    "h2",
-                    null,
-                    "New comment:"
-                ),
-                React.createElement("textarea", {
-                    onChange: this.props.onChange,
-                    cols: "30",
-                    rows: "10" }),
-                React.createElement(
-                    "div",
-                    null,
-                    React.createElement(
-                        "button",
-                        { type: "submit" },
-                        "Add comment"
-                    )
+                    'button',
+                    { className: 'main__openbtn', onClick: this.props.onOpenBtnClick },
+                    '\u2630 Toggle Sidebar'
                 )
             );
         }
     }]);
 
-    return CreateCommentSection;
+    return Main;
 }(React.Component);
 
 /***/ }),
 
-/***/ 398:
+/***/ 387:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 388:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Sidebar = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(15);
+
+var React = _interopRequireWildcard(_react);
+
+__webpack_require__(389);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Sidebar = exports.Sidebar = function (_React$Component) {
+    _inherits(Sidebar, _React$Component);
+
+    function Sidebar() {
+        _classCallCheck(this, Sidebar);
+
+        return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+    }
+
+    _createClass(Sidebar, [{
+        key: 'render',
+        value: function render() {
+            var sideBarClassList = "sidebar";
+            if (!this.props.isSideBarOpen) {
+                sideBarClassList += ' sidebar__closed';
+            }
+            return React.createElement(
+                'div',
+                { className: sideBarClassList },
+                React.createElement(
+                    'a',
+                    { className: 'sidebar__closebtn', onClick: this.props.onCloseBtnClick },
+                    '\xD7'
+                ),
+                React.createElement(
+                    'a',
+                    { className: 'sidebar__link', href: '#' },
+                    'About'
+                ),
+                React.createElement(
+                    'a',
+                    { className: 'sidebar__link', href: '#' },
+                    'Services'
+                ),
+                React.createElement(
+                    'a',
+                    { className: 'sidebar__link', href: '#' },
+                    'Clients'
+                ),
+                React.createElement(
+                    'a',
+                    { className: 'sidebar__link', href: '#' },
+                    'Contact'
+                )
+            );
+        }
+    }]);
+
+    return Sidebar;
+}(React.Component);
+
+/***/ }),
+
+/***/ 389:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
@@ -21203,106 +21133,6 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-
-/***/ }),
-
-/***/ 96:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var HTTPService = exports.HTTPService = function () {
-  function HTTPService() {
-    _classCallCheck(this, HTTPService);
-  }
-
-  _createClass(HTTPService, [{
-    key: 'get',
-    value: function get(url, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', url);
-      xhr.send();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }, {
-    key: 'post',
-    value: function post(url, data, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', url);
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(typeof data !== 'string' ? JSON.stringify(data) : data);
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }, {
-    key: 'delete',
-    value: function _delete(url, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('DELETE', url);
-
-      xhr.send();
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }, {
-    key: 'put',
-    value: function put(url, data, successCallback, errorCallback) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('PUT', url);
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(data));
-
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var parsedData = JSON.parse(xhr.response);
-            successCallback(parsedData);
-          } else {
-            errorCallback(xhr);
-          }
-        }
-      };
-    }
-  }]);
-
-  return HTTPService;
-}();
 
 /***/ }),
 

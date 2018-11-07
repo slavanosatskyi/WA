@@ -60,28 +60,28 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 353);
+/******/ 	return __webpack_require__(__webpack_require__.s = 364);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 353:
+/***/ 364:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(354);
+module.exports = __webpack_require__(365);
 
 
 /***/ }),
 
-/***/ 354:
+/***/ 365:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(355);
+__webpack_require__(366);
 
-var _tabsWidgetHandler = __webpack_require__(356);
+var _tabsWidgetHandler = __webpack_require__(367);
 
 var firstTabText = 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.\
                       Enim consectetur ab, velit beatae neque fugit, vitae commodi\
@@ -101,14 +101,14 @@ var tabsWidgetLorem = document.querySelector('#loremTabs');
 
 /***/ }),
 
-/***/ 355:
+/***/ 366:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 356:
+/***/ 367:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

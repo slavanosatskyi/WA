@@ -18,6 +18,18 @@
     padding-right: 10px; }
   .comment__text {
     padding-bottom: 10px; }
+  .comment__delete {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    background: white;
+    border: none;
+    font-size: 0.75rem;
+    color: #929292;
+    padding: 0;
+    outline: none; }
+    .comment__delete:hover {
+      text-decoration: underline; }
 * {
   box-sizing: border-box; }
 

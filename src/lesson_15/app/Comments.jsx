@@ -15,6 +15,7 @@ export class Comments extends React.Component {
         this.httpService = new HTTPService();
         this.onSubmit = this.onSubmit.bind(this);
         this.valueChange = this.valueChange.bind(this);
+        this.deleteComment = this.deleteComment.bind(this);
         this.state = {
             comments: [],
         };
@@ -57,13 +58,36 @@ export class Comments extends React.Component {
         this.textAreaValue = e.target.value;
     }
 
+    deleteComment(commentId) {
+        this.httpService.delete(URL + '/' + commentId, () => {
+            this.setState((oldState) => {
+                const newState = Object.assign({}, oldState);
+                const index = this.findCommentIndexByCommentId(commentId);
+                if (index !== -1) {
+                    newState.comments.splice(index);
+                }
+
+                return newState;
+            });
+        });
+    }
+
+    findCommentIndexByCommentId(commentId) {
+        const comment = this.state.comments.find((comment) => {
+            return comment.id === commentId;
+        });
+
+        return comment !== undefined ? this.state.comments.indexOf(comment) : -1;
+    }
+
     render() {
         return (
-        <div className="comments">
-            <CommentsList comments = {this.state.comments} />
-            <CreateCommentSection onSubmit = {this.onSubmit}
-            onChange={this.valueChange}/>
-        </div>
+            <div className="comments">
+                <CommentsList comments={this.state.comments}
+                    deleteComment={this.deleteComment} />
+                <CreateCommentSection onSubmit={this.onSubmit}
+                    onChange={this.valueChange} />
+            </div>
         );
     }
 }

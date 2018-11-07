@@ -60,30 +60,30 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 348);
+/******/ 	return __webpack_require__(__webpack_require__.s = 359);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 348:
+/***/ 359:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(349);
+module.exports = __webpack_require__(360);
 
 
 /***/ }),
 
-/***/ 349:
+/***/ 360:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(350);
+__webpack_require__(361);
 
-var _phoneToggler = __webpack_require__(351);
+var _phoneToggler = __webpack_require__(362);
 
-var _accordionHandler = __webpack_require__(352);
+var _accordionHandler = __webpack_require__(363);
 
 var phoneTogglers = document.querySelectorAll('.container__switching-element');
 for (var i = 0; i < phoneTogglers.length; ++i) {
@@ -97,14 +97,14 @@ for (var _i = 0; _i < accordions.length; ++_i) {
 
 /***/ }),
 
-/***/ 350:
+/***/ 361:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 351:
+/***/ 362:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -135,7 +135,7 @@ function phoneToggler(targetElement) {
 
 /***/ }),
 
-/***/ 352:
+/***/ 363:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -1,22 +1,37 @@
 $border-color: rgb(231, 231, 231);
 $header-text-color: rgb(146, 146, 146);
+$font-size: 0.75rem;
 
 .comment {
     padding: 10px 0;
     &__footer {
         display: flex;
         justify-content: flex-start;
-        font-size: 0.75rem;
+        font-size: $font-size;
         color: $header-text-color;
         border-top: 1px solid $border-color;
         padding-top: 5px; 
     }
     &__author {
         font-weight: normal;
-        font-size: 0.75rem;
+        font-size: $font-size;
         padding-right: 10px;
     }
     &__text {
         padding-bottom: 10px;
+    }
+    &__delete {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        background: rgb(255, 255, 255);
+        border: none;
+        font-size: $font-size;
+        color: $header-text-color;
+        padding: 0;
+        outline: none;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
