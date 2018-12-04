@@ -26,7 +26,6 @@ export class WeatherWidget extends React.Component {
     }
 
     getCurrentGeolocation() {
-        let currentPosition = null;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.setCityNameFromCoodrindates(position.coords);
@@ -37,11 +36,10 @@ export class WeatherWidget extends React.Component {
     setCityNameFromCoodrindates(coords) {
         Geocode.fromLatLng(coords.latitude, coords.longitude).then(
             response => {
-                console.log(response.results[0]);
                 for (let i = 0; i < response.results[0].address_components.length; ++i) {
                     if (response.results[0].address_components[i].types.includes('locality')) {
                         this.setState({ city: response.results[0].address_components[i].long_name });
-                        console.log(this.state);
+                        this.fetchData();
                         break;
                     }
                 }
@@ -56,7 +54,7 @@ export class WeatherWidget extends React.Component {
         if (this.state.city === null || this.state.city === '') {
             return;
         }
-
+        console.log('ololol');
         const URL = `https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22${this.state.city}%22)%20and%20u%3D\'c\'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`
         this.httpsService.get(URL, (data) => {
             this.setState((oldState) => {
@@ -76,15 +74,16 @@ export class WeatherWidget extends React.Component {
         return <img src={imageURl} alt="" />
     }
 
-    handleChange(object) {
-        this.state.city = object.suggestion.name; //CHECK: how to pass parameter into lambda
+    handleChange(event) {
+        console.log(event.target.value);
+        this.setState({city: event.target.value});
         this.fetchData();
     }
 
     render() {
         return (
             <div className="weather-widget">
-                <CitySearch defaultValue={this.state.city}
+                <CitySearch value={this.state.city}
                     onChange={this.handleChange}
                     onKeyPress={this.handleKeyPress} />
                 <div>{this.state.condition.date}</div>
