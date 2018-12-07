@@ -60,30 +60,43 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 333);
+/******/ 	return __webpack_require__(__webpack_require__.s = 352);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 333:
+/***/ 352:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(334);
+module.exports = __webpack_require__(353);
 
 
 /***/ }),
 
-/***/ 334:
+/***/ 353:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(335);
+__webpack_require__(354);
+
+var headers = document.querySelectorAll('.footer__column-header');
+
+var _loop = function _loop(i) {
+    headers[i].addEventListener('click', function () {
+        headers[i].classList.toggle('footer__column-header_opened');
+        headers[i].nextElementSibling.classList.toggle('footer__column-section_opened');
+    });
+};
+
+for (var i = 0; i < headers.length; ++i) {
+    _loop(i);
+}
 
 /***/ }),
 
-/***/ 335:
+/***/ 354:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

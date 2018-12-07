@@ -1,0 +1,134 @@
+@import url(https://use.fontawesome.com/releases/v5.4.1/css/all.css);* {
+  box-sizing: border-box; }
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px; }
+
+body {
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  width: 800px;
+  min-height: 800px;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  background-color: #64d723;
+  border-radius: 2%;
+  box-shadow: 3px 3px 15px rgba(130, 130, 130, 0.5); }
+  .container__switching-element-section {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    padding-top: 50px; }
+  .container__switching-element {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 20px; }
+  .container__device {
+    width: 256px;
+    height: 256px;
+    background-image: url(./assets/images/nexus-one-off.png); }
+    .container__device_on {
+      position: relative;
+      left: -3px;
+      top: -1px;
+      background-image: url(./assets/images/nexus-one-on.png); }
+  .container__accordion-section {
+    padding-top: 60px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
+
+.toggle {
+  background-color: blue;
+  border-radius: 12px;
+  width: 55px;
+  height: 25px;
+  position: relative;
+  transition: all 0.3s ease; }
+  .toggle::after {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    transition: left .2s ease; }
+  .toggle_off {
+    background-color: lightgray; }
+    .toggle_off::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      top: 2px; }
+
+.accordion {
+  width: 520px; }
+  .accordion__item {
+    margin-bottom: 10px; }
+  .accordion__header {
+    font-size: 22px;
+    color: white;
+    background-color: #04082c;
+    height: 80px;
+    font-weight: normal;
+    padding: 28px 0 26px 39px;
+    position: relative; }
+    .accordion__header::after {
+      position: absolute;
+      right: 50px;
+      content: '\F107';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 600;
+      color: #3743af; }
+    .accordion__header:hover {
+      cursor: pointer; }
+  .accordion__content {
+    font-size: 22px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: white;
+    font-weight: 300;
+    line-height: 1.55;
+    color: #656565;
+    transition: all .3s ease;
+    padding: 0 27px; }
+  .accordion__item_opened > .accordion__header {
+    background-image: linear-gradient(96deg, #010289 2%, #1d30d5); }
+    .accordion__item_opened > .accordion__header::after {
+      color: #0f8ffe; }
+  .accordion__item_opened > .accordion__content {
+    padding: 25px 27px 0 27px;
+    max-height: 100vh; }

@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px; }
+
+body {
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0; }
+.autocomplete {
+  width: 100%;
+  position: relative; }
+  .autocomplete__input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    padding-bottom: 8px;
+    font-size: 16px; }
+  .autocomplete__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #505050;
+    box-shadow: 0 0 10px rgba(80, 80, 80, 0.5);
+    color: black; }
+    .autocomplete__list_visible {
+      display: block; }
+  .autocomplete__list-item {
+    padding: 5px;
+    cursor: pointer; }
+    .autocomplete__list-item:hover {
+      background: #c8c8c8; }
+.calendar-date {
+  font-size: 0.9rem;
+  color: white; }
+.weather-status {
+  text-shadow: 1px 1px rgba(30, 30, 30, 0.5); }
+  .weather-status__header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 100%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%; }
+  .weather-status__temperature {
+    font-size: 3.5rem;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    padding: 5px; }
+    .weather-status__temperature::after {
+      content: '\2103'; }
+  .weather-status__image-wrapper {
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    overflow: hidden; }
+    .weather-status__image-wrapper_image {
+      width: 104px;
+      height: 104px; }
+  .weather-status__description {
+    font-size: 1.5rem;
+    text-align: center; }
+.weather-widget {
+  width: 300px;
+  min-height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #000983;
+  box-shadow: 0 0 30px rgba(50, 50, 50, 0.5);
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(./assets/images/night.png);
+  color: white; }
+  .weather-widget_day {
+    background-image: url(./assets/images/after_noon.png);
+    color: black; }
+  .weather-widget__date {
+    margin-top: 5px; }
+  .weather-widget__status {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin-top: 90px; }
