@@ -4,12 +4,14 @@ import {Autocompliter} from '../Autocompliter/autocompliter.js';
 
 import './CitySearch.scss';
 
+//TODO: move list time into separate component
+
 export class CitySearch extends React.Component {
     constructor(props) {
         super();
         this.onChange = this.onChange.bind(this);
+        this.onListItemClick = this.onListItemClick.bind(this);
         this.state = {
-            isAutocompleteOpened: false,
             predictions: []
         }
     }
@@ -22,19 +24,23 @@ export class CitySearch extends React.Component {
                         placeholder = 'Enter city here...' 
                         value = {this.props.value} 
                         onChange = {this.onChange}/>
-                <div className={this.state.isAutocompleteOpened ? "autocomplete__list autocomplete__list_visible": "autocomplete__list"}>{this.getListOfPredictions()}</div>
+                <div className={this.props.isAutoCompleteOpened ? "autocomplete__list autocomplete__list_visible": "autocomplete__list"}>{this.getListOfPredictions()}</div>
             </div>
         );
     }
 
     getListOfPredictions() {
         let predictions = this.state.predictions.map((prediction, index) => {
-            return <p key={index} className = "autocomplete__list-item">{prediction}</p>
+            return <p key={index} className = "autocomplete__list-item" onClick = {this.onListItemClick}>{prediction}</p>
         });
         if (predictions.size > 5) {
             predictions = predictions.splice(4);
         }
         return predictions;
+    }
+
+    onListItemClick(e) {
+        this.props.onListItemClick(e.target.innerText);
     }
 
     onChange(e) {
@@ -46,13 +52,6 @@ export class CitySearch extends React.Component {
             });
             this.setState({predictions: cities});
         });
-        if (this.state.predictions.size !== 0) {
-            this.setState({isAutocompleteOpened: true});
-        } 
-        this.props.onChange(e);
-        //     data.predictions.forEach((prediction) => {
-        //         cities.push(prediction.structured_formatting.main_text)
-        //     });
-  
+        this.props.onChange(e, this.state.predictions.size === 0);
     }
 }

@@ -13,4 +13,17 @@
     background-repeat:  no-repeat;
     background-size: cover;
     background-image: url('./../../../../assets/images/weather/night.png');
+    color: rgb(255, 255, 255);
+    &_day {
+        background-image: url('./../../../../assets/images/weather/after_noon.png');
+        color: rgb(0, 0, 0);
+    }
+    &__date {
+        margin-top: 5px;
+    }
+    &__status {
+        display: flex;
+        justify-content: center;
+        margin-top: 90px;
+    }
 }

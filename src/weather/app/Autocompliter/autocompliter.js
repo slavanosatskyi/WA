@@ -1,8 +1,9 @@
 import { HTTPService } from '../../../common/scripts/http-service';
+import { googleAPIkey } from '../common';
 
 export class Autocompliter {
     getSuggestions(input, callback) {
-        const URL =`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${input}&types=(cities)&key=AIzaSyCU6PzOG2JD1-1YACW7nMHT70CXZDhTq-Y`
+        const URL =`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${input}&types=(cities)&key=${googleAPIkey}`
 
         let service = new HTTPService();
         service.get(URL, (data) => {
