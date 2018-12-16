@@ -1,0 +1,12 @@
+$selected_color: rgb(247, 230, 155);
+
+.star {
+    font-size: 1.5rem;
+    &:hover {
+        cursor: pointer;
+        color: $selected_color;
+    }
+    &_selected {
+        color: $selected_color;
+    }
+}

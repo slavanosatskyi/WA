@@ -1,0 +1,10 @@
+.button {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 2px;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(200, 200, 200, 0.5);
+  }
+}

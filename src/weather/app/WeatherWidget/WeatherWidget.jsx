@@ -2,11 +2,12 @@ import * as React from 'react';
 import Geocode from "react-geocode";
 
 import { HTTPService } from '../../../common/scripts/http-service';
-import { CitySearch } from '../CitySearch/CitySearch.jsx';
-import { CalendarDate } from '../CalendarDate/CalendarDate.jsx';
-import { WeatherStatus } from '../WeatherStatus/WeatherStatus.jsx';
-import { LocalTime } from '../LocalTime/localtime.js';
 import { googleAPIkey } from '../common';
+import { LocalTime } from '../Helpers/localtime.js';
+
+import { CitySearch } from './CitySearch/CitySearch.jsx';
+import { CalendarDate } from './CalendarDate/CalendarDate.jsx';
+import { WeatherStatus } from './WeatherStatus/WeatherStatus.jsx';
 
 import './WeatherWidget.scss';
 
@@ -24,6 +25,9 @@ import './WeatherWidget.scss';
 // * FIX issue with dalayed response from geolocation (temperature sign is shown)
 // * move calculation of timestamp into common place 
 // * refactor WeatherWidget. It is doing too many things
+// * geolocation brings another name of the city than yahoo api. It doesn't allow to save autodetected city into favorites
+// * change structure of the project. Make tree structure accoding to components nesting
+// * fix issue with overlapping text and star favorite
 
 export class WeatherWidget extends React.Component {
     constructor() {
@@ -32,14 +36,20 @@ export class WeatherWidget extends React.Component {
         this.state = {
             condition: {},
             city: '',
+            favorites: [],
             sunrise: new Date(),
             sunset: new Date(),
             currentTime: null,
-            isAutoCompleteOpened: false
+            isAutoCompleteOpened: false,
+            isFavoriteListOpened: false
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.onListItemClick = this.onListItemClick.bind(this);
+        this.addFavorite = this.addFavorite.bind(this);
+        this.deleteFavorite = this.deleteFavorite.bind(this);
+        this.isCityInFavorites = this.isCityInFavorites.bind(this);
+        this.onFavoritesListButtonClick = this.onFavoritesListButtonClick.bind(this);
         Geocode.setApiKey(googleAPIkey);
     }
 
@@ -49,6 +59,9 @@ export class WeatherWidget extends React.Component {
         document.addEventListener('click', (event) => {
             if (this.state.isAutoCompleteOpened) {
                 this.setState({ isAutoCompleteOpened: false });
+            }
+            if (this.state.isFavoriteListOpened) {
+                this.setState({ isFavoriteListOpened: false });
             }
         })
     }
@@ -91,8 +104,6 @@ export class WeatherWidget extends React.Component {
                 newState.condition = data.query.results.channel.item.condition;
                 this.setSunriseTime(data.query.results.channel.astronomy);
                 this.setSunsetTime(data.query.results.channel.astronomy);
-                console.log(this.state.sunrise);
-                console.log(this.state.sunset);
                 return newState;
             });
         });
@@ -101,10 +112,8 @@ export class WeatherWidget extends React.Component {
             this.setState((oldState) => {
                 let d1 = new Date();
                 let timestamp = new Date(d1.getUTCFullYear(), d1.getUTCMonth(), d1.getUTCDate(), d1.getUTCHours(), d1.getUTCMinutes(), d1.getUTCSeconds());
-                console.log(data);
                 const newState = Object.assign({}, oldState);
                 newState.currentTime = new Date((timestamp / 1000 + data.dstOffset + data.rawOffset) * 1000);
-                console.log(newState.currentTime);
                 return newState;
             });
         });
@@ -151,21 +160,59 @@ export class WeatherWidget extends React.Component {
         return this.state.currentTime > this.state.sunrise && this.state.currentTime < this.state.sunset;
     }
 
+    addFavorite(city) {
+        this.setState((oldState) => {
+            const newState = Object.assign({}, oldState);
+            newState.favorites.push(city);
+            return newState;
+        });
+    }
+
+    deleteFavorite(city) {
+        this.setState((oldState) => {
+            const newState = Object.assign({}, oldState);
+            newState.favorites = newState.favorites.filter((element) => {
+                return element !== city;
+            });
+            return newState;
+        });
+    }
+
+    isCityInFavorites() {
+        return this.state.favorites.includes(this.state.city);
+    }
+
+    onFavoritesListButtonClick(event) {
+        if (this.state.favorites.length === 0) {
+            return;
+        }
+        this.setState({isFavoriteListOpened: !this.state.isFavoriteListOpened});
+        event.nativeEvent.stopImmediatePropagation();
+    }
+
     render() {
         return (
             <div className={this.isDayTime() ? "weather-widget weather-widget_day" : "weather-widget"}>
-                <CitySearch value={this.state.city}
+                <CitySearch 
+                    value={this.state.city}
                     onChange={this.handleChange}
                     isAutoCompleteOpened={this.state.isAutoCompleteOpened}
                     onListItemClick={this.onListItemClick}
+                    addFavorite={this.addFavorite}
+                    deleteFavorite={this.deleteFavorite}
+                    isCityInFavorites={this.isCityInFavorites()}
+                    favoritesList={this.state.favorites}
+                    isFavoriteListOpened={this.state.isFavoriteListOpened}
+                    onFavoritesListButtonClick={this.onFavoritesListButtonClick}
                 />
                 <div className="weather-widget__date">
-                    <CalendarDate />
+                    <CalendarDate/>
                 </div>
                 <div className="weather-widget__status">
                     <WeatherStatus temperature={this.state.condition.temp}
                         description={this.state.condition.text}
-                        imageCode={this.state.condition.code} />
+                        imageCode={this.state.condition.code} 
+                    />
                 </div>
             </div>
         );

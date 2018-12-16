@@ -1,0 +1,25 @@
+.list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition: 0.5s height;
+    &_visible {
+        height: auto;
+        max-height: 132px;
+        overflow-y: scroll;
+        border: 1px solid rgb(80, 80, 80);
+        box-shadow: 0 0 10px rgba(80, 80, 80, 0.5);
+    }
+    &__item {
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+            background: rgb(200, 200, 200);
+        }
+    }
+}
